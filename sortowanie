@@ -1,0 +1,17 @@
+# sortowanie
+  print("enter the number of numbers :")
+       b = io.read( )   --podawanie ilosci liczb
+ local n={b}
+
+  for i=1,b,1 do
+      print("give me a number :")
+    n[i] = io.read( )   -- wpisywanie do tabeli
+  end 
+
+print("unsorted table :")
+    for i=1,b,1 do
+      print(n[i])    --wywolanie tabeli nieposortowana  
+     end
+    io.write("sorted table :\n")
+table.sort(n)  --sortowanie
+table.foreach(n, print)    
