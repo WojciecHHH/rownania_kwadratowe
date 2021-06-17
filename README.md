@@ -32,8 +32,18 @@
         ngx.say("temp: ", a ," pressure: ", b ," humidity: ", c)
 
     if delta>0 then
-     local  res, err = httpc:request_uri("192.168.2.2/win&A=200&FX=9", 
-        {method = "POST"})
     end
+    	A=200
+	FX=4
+	end
+	
+	local httpc = require("resty.http").new()
+	local res, err = httpc:request_uri("http://192.168.2.10/win&A="..A.."&FX="..FX, {
+	method = "POST" })
+	
+	if not res then
+		ngx.log(ngx.ERR, "request failed: ", err)
+		return
+	end
 		}
 		}
